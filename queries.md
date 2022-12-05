@@ -12,17 +12,17 @@ WHERE `cfu` > 10;
 3 Selezionare tutti gli studenti che hanno più di 30 anni
 ```sql
 /* Mostro prima le età a schermo */
-SELECT *, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0 AS age
-FROM `students`;
+/* SELECT *, DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0 AS age
+FROM `students`; */
 /* Modifico la tabella e aggiungo il nuovo valore */
-ALTER TABLE `students`
+/* ALTER TABLE `students`
 ADD age INT;
 UPDATE `students`
-SET age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0;
+SET age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0; */
 /* Seleziono gli studenti con più di 30 anni */
 SELECT *
 FROM `students`
-WHERE `age` > 30;
+WHERE (DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0) > 30;
 ```
 
 4 Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
