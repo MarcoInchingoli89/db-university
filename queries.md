@@ -71,10 +71,14 @@ SELECT YEAR(`enrolment_date`) AS enrolment_year,
  FROM `students`
  GROUP BY YEAR(`enrolment_date`);
 ```
+2 Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+```sql
+SELECT COUNT(*)
+AS total_teachers, `teachers`.`office_address`
+FROM `teachers`
+GROUP BY `office_address`;
+```
 
-
-
-Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 Calcolare la media dei voti di ogni appello d'esame
 Contare quanti corsi di laurea ci sono per ogni dipartimento
 
